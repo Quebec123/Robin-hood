@@ -18,4 +18,11 @@
 #define STEPPER2_PIN_B 13
 #define STEPPER2_PIN_C 14
 #define STEPPER2_PIN_D 15
+#define STEPS_PER_REVOLUTION 200
+//reciever pins
+#define RECIEVER1_PIN 16
+#define RECIEVER2_PIN 17
+//input pins
+#define BUTTON1_PIN 18
+#define BUTTON2_PIN 19
 #endif //UNTITLED4_PIN_DEFINITION_H

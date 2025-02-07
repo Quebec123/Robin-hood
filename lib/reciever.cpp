@@ -9,6 +9,7 @@ reciever::reciever(int pin) {
     this->pin = pin;
 }
 
-int reciever::recieve() {
+bool reciever::recieve() {
     return pulseIn(this->pin, HIGH,100);
+
 }

@@ -4,7 +4,7 @@
 
 #ifndef UNTITLED4_SERVO_CONTROLLER_H
 #define UNTITLED4_SERVO_CONTROLLER_H
-#include "Servo.h"
+#include "ESP32Servo.h"
 
 class Servo_controller {
     bool position;
@@ -15,6 +15,7 @@ public:
     void change_position(bool position);
     void set_position(bool position);
     void switch_position();
+    bool get_position();
 };
 
 

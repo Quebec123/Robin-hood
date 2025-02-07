@@ -4,7 +4,7 @@
 #include "Pin_definition.h"
 #include "Servo_controller.h"
 #include "Arduino.h"
-#include "Servo.h"
+#include "ESP32Servo.h"
 Servo_controller::Servo_controller(int pin) {
     this->pin = pin;
     this->position = 0;

@@ -9,7 +9,7 @@ class reciever {
 int pin;
 public:
     reciever(int pin);
-    int recieve();
+    bool recieve();
 
 };
 

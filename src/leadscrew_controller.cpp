@@ -3,17 +3,17 @@
 //
 
 #include "leadscrew_controller.h"
-#include <Stepper.h>
+#include "Stepper.h"
 #include <stdlib.h>
 #include <time.h>
 
-leadscrew_controller::leadscrew_controller(int pin_A, int pin_B, int pin_C, int pin_D, int stepsPerRevolution) {
+leadscrew_controller::leadscrew_controller(int pin_A, int pin_B, int pin_C, int pin_D, int stepsPerRevolution)
+        : stepper(stepsPerRevolution, pin_A, pin_B, pin_C, pin_D) {
     this->pin_A = pin_A;
     this->pin_B = pin_B;
     this->pin_C = pin_C;
     this->pin_D = pin_D;
     this->stepsPerRevolution = stepsPerRevolution;
-    this->stepper = Stepper(stepsPerRevolution, pin_A, pin_B, pin_C, pin_D);
     this->is_moving = false;
     this->direction = true;
     stepper.setSpeed(60);

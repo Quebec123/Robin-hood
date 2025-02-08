@@ -11,7 +11,7 @@
 class Pair {
 leadscrew_controller leadscrew;
 Servo_controller servo;
-reciever reciever;
+reciever recieverled;
 bool is_on;
 public:
     Pair(int pin_A, int pin_B, int pin_C, int pin_D, int stepsPerRevolution, int servo_pin, int reciever_pin);
@@ -25,6 +25,8 @@ public:
     bool random();
     bool get_is_on();
     void set_is_on(bool is_on);
+    void get_hit();
+    void become_target();
 };
 
 

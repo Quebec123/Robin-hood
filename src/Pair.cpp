@@ -4,7 +4,7 @@
 
 #include "Pair.h"
 
-Pair::Pair(int pin_A, int pin_B, int pin_C, int pin_D, int stepsPerRevolution, int servo_pin, int reciever_pin) : leadscrew(pin_A, pin_B, pin_C, pin_D, stepsPerRevolution), servo(servo_pin), reciever(reciever_pin) {
+Pair::Pair(int pin_A, int pin_B, int pin_C, int pin_D, int stepsPerRevolution, int servo_pin, int reciever_pin) : leadscrew(pin_A, pin_B, pin_C, pin_D, stepsPerRevolution), servo(servo_pin), recieverled(reciever_pin) {
     this->is_on = false;
 }
 
@@ -13,7 +13,7 @@ bool Pair::random() {
 }
 
 bool Pair::recieve() {
-    return reciever.recieve();
+    return recieverled.recieve();
 }
 
 void Pair::move() {
@@ -50,5 +50,16 @@ bool Pair::get_is_on() {
 
 void Pair::set_is_on(bool is_on) {
     this->is_on = is_on;
+}
+
+void Pair::get_hit() {
+    this->is_on = false;
+    servo.switch_position();
+    leadscrew.move_random();
+}
+ void Pair::become_target() {
+    this->is_on = true;
+    leadscrew.stop();
+    servo.switch_position();
 }
 
